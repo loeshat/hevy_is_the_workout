@@ -1,0 +1,36 @@
+/* variables.css */
+
+:root {
+  /* Green shades */
+  --green: #97f0b6;
+  --green-dark: #83d6a3;
+  --green-darker: #77c294;
+
+  /* Blue shades */
+  --blue: #202f72;
+  --blue-dark: #1b2860;
+  --blue-darker: #182456;
+
+  /* Pink shades */
+  --pink: #f56ebd;
+  --pink-dark: #f059b5;
+  --pink-darker: #f050b2;
+
+  /* Bright Pink */
+  --bright-pink: #eb019b;
+  --bright-pink-dark: #e30296;
+  --bright-pink-darker: #ce0489;
+
+  /* Yellow shades */
+  --yellow: #d3f970;
+  --yellow-dark: #dde843;
+  --yellow-darker: #c8d23b;
+
+  /* Teal shades */
+  --teal: #48917e;
+  --teal-dark: #468978;
+  --teal-darker: #3d8472;
+
+  /* Light Grey shades */
+  --light-grey: #d0d0d0;
+}

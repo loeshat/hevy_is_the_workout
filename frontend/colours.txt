@@ -1,0 +1,17 @@
+Green: 97F0B6
+Darker Variant: 83D6A3
+Darker Variant 2: 77C294
+
+Blue: 202F72
+Darker Variant: 1B2860
+
+Pink: F56EBD
+Darker Variant: F059B5
+
+Bright Pink: EB019B
+
+Yellow: D3F970
+Darker Variant: DDE843
+
+Teal: 48917E
+Darker Variant: 468978
