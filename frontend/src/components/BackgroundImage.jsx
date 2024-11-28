@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
+import { motion } from "framer-motion";
 
-const Dumbbell = ({ colour, left, top, transform }) => {
+const BackgroundImage = ({ component, left, top, transform }) => {
   return (
     <Box
       sx={{
@@ -11,16 +12,19 @@ const Dumbbell = ({ colour, left, top, transform }) => {
         zIndex: 0,
       }}
     >
-      <img
-        src={`../src/assets/dumbbell_${colour}.png`}
+      <motion.img
+        src={`../src/assets/${component}.png`}
         style={{
           width: "80vw",
           maxWidth: "400px",
           transform: transform,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
       />
     </Box>
   );
 };
 
-export default Dumbbell;
+export default BackgroundImage;

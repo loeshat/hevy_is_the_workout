@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, Container, Button } from "@mui/material";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import GoBackButton from "../components/GoBackButton";
@@ -8,7 +7,6 @@ import GoBackButton from "../components/GoBackButton";
 const HelpPage = () => {
   const navigate = useNavigate();
 
-  // Define the motion variants for the transition
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -107,7 +105,7 @@ const HelpPage = () => {
             textAlign: "left",
           }}
         >
-          <GoBackButton colour="blue" backgroundColour="green" />
+          <GoBackButton colour="blue" backgroundColour="green" url="-1" />
           {/* Main Heading */}
           <Typography variant="h4" sx={{ fontWeight: "bold", mb: 5 }}>
             Where do I export my data?

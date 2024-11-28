@@ -1,4 +1,5 @@
 import csv
+import io
 
 REQUIRED_HEADERS = [
   "title", "start_time", "end_time", "description", "exercise_title",
@@ -6,19 +7,16 @@ REQUIRED_HEADERS = [
   "reps", "distance_km", "duration_seconds", "rpe"
 ]
 
-def validate_csv(file_path):
-  try:
-    with open(file_path, mode='r') as csv_file:
-      reader = csv.reader(csv_file)
-      headers = next(reader)
-      if headers == REQUIRED_HEADERS:
-        return True, "CSV is valid."
-      else:
-        return False, f"Invalid CSV headers. Expected: {REQUIRED_HEADERS}"
-  except Exception as e:
-    return False, f"Error reading CSV file: {str(e)}"
+def validate_csv(file):
+  file.seek(0)  # Ensure the file pointer is at the start
+  # Decode the file without wrapping it, so it doesn't close
+  decoded_file = file.read().decode("utf-8")
+  lines = decoded_file.splitlines()
+  reader = csv.DictReader(lines)
 
-if __name__ == "__main__":
-  # For testing purposes
-  is_valid, message = validate_csv("data.csv")
-  print(message)
+  # Check if all required headers are in the file
+  missing_headers = [header for header in REQUIRED_HEADERS if header not in reader.fieldnames]
+  if missing_headers:
+    return False
+
+  return True

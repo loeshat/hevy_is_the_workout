@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Button, Container, Divider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import BackgroundImage from "../components/BackgroundImage";
 import UploadFileModal from "../components/UploadFileModal";
 
 const HomePage = () => {
@@ -18,76 +18,30 @@ const HomePage = () => {
       <Box
         sx={{
           backgroundColor: "var(--green)",
-          maxWidth: "100vw",
+          maxWidth: "100%",
           overflowX: "hidden",
+          position: "relative",
         }}
       >
         {/* Fixed Background Dumbbells */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: "5%",
-            left: { xs: "15%", md: "35%", lg: "50%" },
-            backgroundSize: "contain",
-            zIndex: 0,
-          }}
-        >
-          <motion.img
-            src="../src/assets/dumbbell_green.png"
-            style={{
-              width: "80vw",
-              maxWidth: "400px",
-              transform: "rotate(20deg)",
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            position: "absolute",
-            top: "55vh",
-            left: { xs: "0%", md: "10%", lg: "25%" },
-            backgroundSize: "contain",
-            zIndex: 0,
-          }}
-        >
-          <motion.img
-            src="../src/assets/dumbbell_green.png"
-            style={{
-              width: "70vw",
-              maxWidth: "400px",
-              transform: "rotate(330deg)",
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            position: "absolute",
-            top: "90vh",
-            left: { xs: "40%", md: "40%", lg: "50%" },
-            backgroundSize: "contain",
-            zIndex: 0,
-          }}
-        >
-          <motion.img
-            src="../src/assets/kettlebell_green.png"
-            style={{
-              width: "50vw",
-              maxWidth: "300px",
-              transform: "rotate(20deg)",
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          />
-        </Box>
+        <BackgroundImage
+          component="dumbbell_green"
+          left={{ xs: "15%", md: "35%", lg: "50%" }}
+          top="5%"
+          transform="rotate(20deg)"
+        />
+        <BackgroundImage
+          component="dumbbell_green"
+          left={{ xs: "0%", md: "10%", lg: "25%" }}
+          top="55vh"
+          transform="rotate(330deg)"
+        />
+        <BackgroundImage
+          component="kettlebell_green"
+          left={{ xs: "40%", md: "40%", lg: "50%" }}
+          top="90vh"
+          transform="rotate(20deg)"
+        />
 
         <Container
           sx={{

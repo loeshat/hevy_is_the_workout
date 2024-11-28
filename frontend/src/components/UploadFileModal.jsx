@@ -9,17 +9,18 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useResult } from "../App"; // Import the useResult hook from App
+import { useResult } from "../App";
 
 const UploadFileModal = () => {
   const [open, setOpen] = useState(false);
   const [bodyWeight, setBodyWeight] = useState("");
+  const [name, setName] = useState("");
   const [uploadedFileName, setUploadedFileName] = useState("");
   const [loading, setLoading] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("info");
   const [progressText, setProgressText] = useState("");
-  const { setResult } = useResult(); // Get setResult from the context
+  const { setResult } = useResult();
   const navigate = useNavigate();
 
   const handleOpen = () => setOpen(true);
@@ -57,9 +58,20 @@ const UploadFileModal = () => {
     }
   };
 
+  const handleNameChange = (event) => {
+    const value = event.target.value;
+    setName(value);
+  };
+
   const handleUpload = async () => {
     if (!uploadedFileName) {
       setAlertMessage("Please upload a file first.");
+      setAlertSeverity("error");
+      return;
+    }
+
+    if (!name || name.trim() === "") {
+      setAlertMessage("Please enter a valid full name.");
       setAlertSeverity("error");
       return;
     }
@@ -83,6 +95,7 @@ const UploadFileModal = () => {
           document.querySelector('input[type="file"]').files[0]
         );
         formData.append("body_weight", bodyWeight);
+        formData.append("full_name", name);
 
         const response = await fetch("http://localhost:5000/upload", {
           method: "POST",
@@ -95,8 +108,6 @@ const UploadFileModal = () => {
         if (response.ok) {
           const result = await response.json();
           console.log("Processed User Info:", result);
-
-          // Save result to context
           setResult(result);
 
           setAlertMessage("File processed successfully!");
@@ -114,7 +125,7 @@ const UploadFileModal = () => {
         setAlertMessage("An error occurred while uploading the file.");
         setAlertSeverity("error");
       }
-    }, 3000); // Simulated delay
+    }, 3000);
   };
 
   return (
@@ -184,7 +195,14 @@ const UploadFileModal = () => {
               </Typography>
             )}
           </Box>
-
+          <TextField
+            label="Full Name"
+            variant="outlined"
+            value={name}
+            onChange={handleNameChange}
+            fullWidth
+            sx={{ mb: 1 }}
+          />
           <TextField
             label="Enter Your Body Weight (kg)"
             variant="outlined"

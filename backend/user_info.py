@@ -13,7 +13,7 @@ from user_info_helper import (
   total_volume
 )
 
-def process_workout_data(file_path, body_weight):
+def process_workout_data(file_path, body_weight, full_name):
   # Read the CSV file
   data = pd.read_csv(file_path)
 
@@ -55,7 +55,8 @@ def process_workout_data(file_path, body_weight):
     'workouts_per_time_of_day': workouts_per_time_of_day(workout_times).to_dict(),
     'percentage_most_active_time_of_day': percentage_of_most_active_time_of_day(workout_times),
     'top_five_exercises': exercise_summary(data, body_weight).head().to_dict(),
-    'total_volume_kgs': total_volume(data, body_weight)
+    'total_volume_kgs': total_volume(data, body_weight),
+    'name': full_name
   }
 
   return user_info
