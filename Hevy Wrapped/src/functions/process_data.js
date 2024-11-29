@@ -1,5 +1,4 @@
 import Papa from "papaparse";
-import fs from "fs";
 
 import {
   totalWorkouts,
@@ -15,11 +14,7 @@ import {
   totalVolume,
 } from "./process_data_helpers.js";
 
-const WRAPPED_FILE = "wrapped_data.txt";
-
 export function handleFileUpload(file, fullName, bodyWeight) {
-  fs.writeFile(fullName, bodyWeight);
-
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
 
