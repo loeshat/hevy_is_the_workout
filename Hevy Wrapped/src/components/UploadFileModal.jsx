@@ -97,10 +97,13 @@ const UploadFileModal = () => {
         formData.append("body_weight", bodyWeight);
         formData.append("full_name", name);
 
-        const response = await fetch("http://localhost:5000/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(
+          "https://hevy-is-the-workout.vercel.app/api/app/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         setLoading(false);
         setProgressText("");
