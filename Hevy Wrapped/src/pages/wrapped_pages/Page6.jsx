@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 
 const Page6 = () => {
   const { result } = useResult();
-  const { exercise_title, total_sets, total_volume } =
-    result.top_five_exercises;
+  const topFiveExercises = result.top_five_exercises; // Now this is an array
 
   const pageVariants = {
     initial: { opacity: 0, y: 10 },
@@ -75,10 +74,10 @@ const Page6 = () => {
           {/* Exercises List Animation */}
           <motion.div {...fadeInVariants(0.8)}>
             <Grid container direction="column" spacing={1}>
-              {Object.keys(exercise_title).map((key) => (
+              {topFiveExercises.map((exercise, index) => (
                 <Grid
                   item
-                  key={key}
+                  key={index}
                   sx={{
                     p: 2,
                     borderRadius: 1,
@@ -94,7 +93,7 @@ const Page6 = () => {
                       variant="h6"
                       sx={{ fontWeight: "bold", color: "var(--green)" }}
                     >
-                      #{parseInt(key) + 1}
+                      #{index + 1}
                     </Typography>
                   </Box>
                   {/* Right Section */}
@@ -106,20 +105,22 @@ const Page6 = () => {
                       marginLeft: 3,
                     }}
                   >
-                    <Typography variant="h6">{exercise_title[key]}</Typography>
+                    <Typography variant="h6">
+                      {exercise.exerciseTitle}
+                    </Typography>
                     <Typography variant="body2">
                       <Box
                         component="span"
                         sx={{ color: "var(--pink)", fontWeight: "bold" }}
                       >
-                        {total_sets[key]}
+                        {exercise.totalSets}
                       </Box>{" "}
                       sets,{" "}
                       <Box
                         component="span"
                         sx={{ color: "var(--pink)", fontWeight: "bold" }}
                       >
-                        {total_volume[key].toLocaleString()}
+                        {exercise.totalVolume.toLocaleString()}
                       </Box>{" "}
                       kg volume
                     </Typography>

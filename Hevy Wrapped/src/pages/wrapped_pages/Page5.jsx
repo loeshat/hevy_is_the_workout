@@ -66,7 +66,7 @@ const Page5 = () => {
               variant="h4"
               sx={{ fontWeight: "bold", marginBottom: 5, fontSize: "2.5rem" }}
             >
-              {result.top_five_exercises.exercise_title[0]}
+              {result.top_five_exercises[0].exerciseTitle}
             </Typography>
           </motion.div>
 
@@ -102,7 +102,7 @@ const Page5 = () => {
                   fontSize: "1.2rem",
                 }}
               >
-                {result.top_five_exercises.total_sets[0]}{" "}
+                {result.top_five_exercises[0].totalSets}{" "}
               </Typography>{" "}
               sets with a total volume of{" "}
               <Typography
@@ -114,7 +114,7 @@ const Page5 = () => {
                 }}
               >
                 {Math.round(
-                  result.top_five_exercises.total_volume[0]
+                  result.top_five_exercises[0].totalVolume
                 ).toLocaleString()}{" "}
               </Typography>
               kg!

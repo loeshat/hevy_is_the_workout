@@ -4,18 +4,15 @@ import { useResult } from "../App";
 const SummaryBox = () => {
   const { result } = useResult();
 
-  const topWorkouts = Object.fromEntries(
-    Object.entries(result.top_five_exercises.exercise_title).map(
-      ([key, value]) => [
-        key,
-        value
-          .replace(/\s*\(.*?\)/g, "")
-          .replace(/\s*-\s*.*$/, "")
-          .trim(),
-      ]
-    )
+  // Access top 5 exercises by directly iterating over the array
+  const topWorkouts = result.top_five_exercises.map((exercise) =>
+    exercise.exerciseTitle
+      .replace(/\s*\(.*?\)/g, "")
+      .replace(/\s*-\s*.*$/, "")
+      .trim()
   );
 
+  // Access the top 3 favorite workout days
   const faveDay = Object.entries(result.workouts_per_day_of_the_week)
     .sort(([, workoutsA], [, workoutsB]) => workoutsB - workoutsA)
     .map(([day, workouts]) => ({ day, workouts }))
@@ -92,7 +89,7 @@ const SummaryBox = () => {
             >
               TOP EXERCISES
             </Typography>
-            {Object.entries(topWorkouts).map(([index, workout]) => (
+            {topWorkouts.map((workout, index) => (
               <Typography
                 key={index}
                 variant="body1"

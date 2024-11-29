@@ -10,12 +10,14 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useResult } from "../App";
+import { handleFileUpload } from "../functions/process_data.js";
 
 const UploadFileModal = () => {
   const [open, setOpen] = useState(false);
   const [bodyWeight, setBodyWeight] = useState("");
   const [name, setName] = useState("");
   const [uploadedFileName, setUploadedFileName] = useState("");
+  const [uploadedFile, setUploadedFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [alertSeverity, setAlertSeverity] = useState("info");
@@ -26,6 +28,7 @@ const UploadFileModal = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setUploadedFileName("");
+    setUploadedFile(null);
     setBodyWeight("");
     setAlertMessage("");
     setProgressText("");
@@ -34,11 +37,12 @@ const UploadFileModal = () => {
     setOpen(false);
   };
 
-  const handleFileUpload = (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       if (file.type === "text/csv") {
         setUploadedFileName(file.name);
+        setUploadedFile(file);
         setAlertMessage("");
       } else {
         setAlertMessage("Please upload a valid CSV file.");
@@ -86,49 +90,17 @@ const UploadFileModal = () => {
     setProgressText("Generating Wrapped...");
     setLoading(true);
 
-    // Simulate a 3-second loading process
-    setTimeout(async () => {
-      try {
-        const formData = new FormData();
-        formData.append(
-          "file",
-          document.querySelector('input[type="file"]').files[0]
-        );
-        formData.append("body_weight", bodyWeight);
-        formData.append("full_name", name);
-
-        const response = await fetch(
-          "https://hevy-is-the-workout.vercel.app/api/app",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
-
-        setLoading(false);
-        setProgressText("");
-
-        if (response.ok) {
-          const result = await response.json();
-          console.log("Processed User Info:", result);
-          setResult(result);
-
-          setAlertMessage("File processed successfully!");
-          setAlertSeverity("success");
-          navigate("/wrapped/1");
-        } else {
-          const error = await response.text();
-          setAlertMessage(`Error: ${error}`);
-          setAlertSeverity("error");
-        }
-      } catch (error) {
-        console.error("Error uploading file:", error);
-        setLoading(false);
-        setProgressText("");
-        setAlertMessage("An error occurred while uploading the file.");
-        setAlertSeverity("error");
-      }
-    }, 3000);
+    try {
+      const result = await handleFileUpload(uploadedFile, name, bodyWeight); // Wait for the Promise to resolve
+      console.log(result);
+      setResult(result);
+    } catch (error) {
+      console.error("Error during file upload:", error);
+      setAlertMessage("Error processing file.");
+      setAlertSeverity("error");
+    } finally {
+      navigate("/wrapped/1");
+    }
   };
 
   return (
@@ -189,7 +161,7 @@ const UploadFileModal = () => {
                 type="file"
                 accept=".csv"
                 hidden
-                onChange={handleFileUpload}
+                onChange={handleFileChange}
               />
             </Button>
             {uploadedFileName && (
