@@ -8,7 +8,7 @@ CORS(app)
 
 WRAPPED_FILE = "wrapped_details.txt"
 
-@app.route("/upload", methods=["POST"])
+@app.route("/", methods=["POST"])
 def upload_file():
   # Check if a file is in the request
   if "file" not in request.files:
@@ -49,3 +49,7 @@ def upload_file():
     return jsonify(processed_info), 200
   except Exception as e:
     return f"Error processing file: {str(e)}", 500
+
+
+if __name__ == "__main__":
+  app.run()

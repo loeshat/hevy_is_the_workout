@@ -98,7 +98,7 @@ const UploadFileModal = () => {
         formData.append("full_name", name);
 
         const response = await fetch(
-          "https://hevy-is-the-workout.vercel.app/api/app/upload",
+          "https://hevy-is-the-workout.vercel.app/api/app",
           {
             method: "POST",
             body: formData,
