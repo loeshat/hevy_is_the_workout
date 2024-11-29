@@ -97,7 +97,7 @@ const Page4 = () => {
           {/* Image */}
           <motion.div {...fadeInVariants(1.2)}>
             <img
-              src="./assets/day_2_muscle_pink.png"
+              src="../assets/day_2_muscle_pink.png"
               alt="Muscle icon"
               style={{ width: "50%", height: "auto" }}
             />

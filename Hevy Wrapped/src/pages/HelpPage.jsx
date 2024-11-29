@@ -52,7 +52,7 @@ const HelpPage = () => {
           }}
         >
           <img
-            src="./assets/dumbbell_blue.png"
+            src="../assets/dumbbell_blue.png"
             style={{
               width: "70vw",
               maxWidth: "400px",
@@ -70,7 +70,7 @@ const HelpPage = () => {
           }}
         >
           <img
-            src="./assets/water_bottle_blue.png"
+            src="../assets/water_bottle_blue.png"
             style={{
               width: "80vw",
               maxWidth: "400px",
@@ -88,7 +88,7 @@ const HelpPage = () => {
           }}
         >
           <img
-            src="./assets/kettlebell_blue.png"
+            src="../assets/kettlebell_blue.png"
             style={{
               width: "60vw",
               maxWidth: "400px",
@@ -117,7 +117,7 @@ const HelpPage = () => {
               1. Head to your settings via the profile tab.
             </Typography>
             <img
-              src="./assets/help1.png"
+              src="../assets/help1.png"
               style={{
                 width: "90%",
                 borderRadius: "15px",
@@ -130,7 +130,7 @@ const HelpPage = () => {
               2. Navigate to "Export & Import Data".
             </Typography>
             <img
-              src="./assets/help2.png"
+              src="../assets/help2.png"
               style={{
                 width: "90%",
                 borderRadius: "15px",
@@ -143,7 +143,7 @@ const HelpPage = () => {
               3. Navigate to "Export Data".
             </Typography>
             <img
-              src="./assets/help3.png"
+              src="../assets/help3.png"
               style={{
                 width: "90%",
                 borderRadius: "15px",
@@ -156,7 +156,7 @@ const HelpPage = () => {
               4. Export Workouts and save the csv document to your device.
             </Typography>
             <img
-              src="./assets/help4.png"
+              src="../assets/help4.png"
               style={{
                 width: "90%",
                 borderRadius: "15px",

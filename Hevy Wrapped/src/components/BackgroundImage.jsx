@@ -13,7 +13,7 @@ const BackgroundImage = ({ component, left, top, transform }) => {
       }}
     >
       <motion.img
-        src={`./assets/${component}.png`}
+        src={`../assets/${component}.png`}
         style={{
           width: "80vw",
           maxWidth: "400px",
