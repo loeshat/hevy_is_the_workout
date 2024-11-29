@@ -23,10 +23,23 @@ const WrappedPage = () => {
 
   const currentBackgroundColor = `var(--${backgroundColors[id]})`;
 
+  const pages = {
+    1: () => import("./wrapped_pages/Page1"),
+    2: () => import("./wrapped_pages/Page2"),
+    3: () => import("./wrapped_pages/Page3"),
+    4: () => import("./wrapped_pages/Page4"),
+    5: () => import("./wrapped_pages/Page5"),
+    6: () => import("./wrapped_pages/Page6"),
+    7: () => import("./wrapped_pages/Page7"),
+    8: () => import("./wrapped_pages/Page8"),
+  };
+
   useEffect(() => {
     const loadPage = async () => {
       try {
-        const pageModule = await import(`./wrapped_pages/Page${id}`);
+        const pageModule = await (pages[id]
+          ? pages[id]()
+          : import("./wrapped_pages/PageNotFound"));
         setPageComponent(() =>
           React.lazy(() => Promise.resolve({ default: pageModule.default }))
         );
