@@ -91,7 +91,7 @@ const Page7 = () => {
           {/* Whale Image Animation */}
           <motion.div {...fadeInVariants(0.8)}>
             <Box sx={{ mt: 5, mb: 5 }}>
-              <img src="../assets/whale.png" width="80%" />
+              <img src="/assets/whale.png" width="80%" />
             </Box>
           </motion.div>
 

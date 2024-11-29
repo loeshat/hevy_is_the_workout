@@ -83,7 +83,7 @@ const Page5 = () => {
           {/* Image Animation */}
           <motion.div {...fadeInVariants(1.0)}>
             <Box sx={{ mb: 8 }}>
-              <img src="../assets/workouts_4.png" width="100%" />
+              <img src="/assets/workouts_4.png" width="100%" />
             </Box>
           </motion.div>
 

@@ -55,7 +55,7 @@ const HomePage = () => {
           {/* Header */}
           <Box sx={{ minHeight: "20vh" }}>
             <motion.img
-              src="../assets/hevy_icon.png"
+              src="/assets/hevy_icon.png"
               alt="Hevy Logo"
               style={{ width: "40px", height: "40px" }}
               initial={{ opacity: 0 }}

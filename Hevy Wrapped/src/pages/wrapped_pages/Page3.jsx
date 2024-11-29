@@ -98,7 +98,7 @@ const Page3 = () => {
           {/* Icon */}
           <motion.div {...fadeInVariants(1.0)}>
             <img
-              src="../assets/day_1_pink.png"
+              src="/assets/day_1_pink.png"
               style={{ width: "50%", height: "auto" }}
             />
           </motion.div>
