@@ -31,7 +31,7 @@ const SummaryBox = () => {
         }}
       >
         <img
-          src="../src/assets/dumbbell_blue.png"
+          src="./assets/dumbbell_blue.png"
           style={{
             width: "80vw",
             maxWidth: "400px",
@@ -46,7 +46,7 @@ const SummaryBox = () => {
           width: "100%",
         }}
       >
-        <img src="../src/assets/dumbbell_green.png" width="50px" />
+        <img src="./assets/dumbbell_green.png" width="50px" />
         <Typography variant="h6" sx={{ fontWeight: "bold", fontSize: "1rem" }}>
           HEVY WRAPPED
         </Typography>
@@ -60,10 +60,10 @@ const SummaryBox = () => {
           marginTop: 2,
         }}
       >
-        <img src="../src/assets/summary_1.png" width="26%" />
-        <img src="../src/assets/summary_2_real.png" width="18%" />
-        <img src="../src/assets/summary_3_real.png" width="24%" />
-        <img src="../src/assets/summary_4_real.png" width="15%" />
+        <img src="./assets/summary_1.png" width="26%" />
+        <img src="./assets/summary_2_real.png" width="18%" />
+        <img src="./assets/summary_3_real.png" width="24%" />
+        <img src="./assets/summary_4_real.png" width="15%" />
       </Box>
 
       {/* Bottom Text, data */}

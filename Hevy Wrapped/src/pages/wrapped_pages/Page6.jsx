@@ -131,7 +131,7 @@ const Page6 = () => {
 
           {/* Image Animation */}
           <motion.div {...fadeInVariants(1.0)}>
-            <img src="../src/assets/workouts_4.png" width="100%" />
+            <img src="./assets/workouts_4.png" width="100%" />
           </motion.div>
         </Box>
       </Box>
