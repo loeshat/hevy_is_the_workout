@@ -142,19 +142,6 @@ const SummaryPage = () => {
               DOWNLOAD
             </Typography>
           </Box>
-
-          <Typography variant="h6">Share your summary!</Typography>
-          {/* Social Media Icons */}
-          <Box
-            sx={{
-              display: "flex",
-              gap: "10px",
-            }}
-          >
-            <FaFacebook size={24} style={{ color: "#1877F2" }} />
-            <FaInstagram size={24} style={{ color: "#000" }} />
-            <FaTiktok size={24} style={{ color: "#000" }} />
-          </Box>
         </Box>
       </Box>
     </motion.div>

@@ -118,7 +118,7 @@ const Page3 = () => {
               >
                 {result.percentage_most_active_time_of_day}
               </Typography>
-              % of your workouts were <br /> in the{" "}
+              % of your workouts were in the{" "}
               <Typography
                 component="span"
                 color="var(--bright-pink)"
@@ -165,7 +165,7 @@ const Page3 = () => {
                     <Typography
                       component="span"
                       sx={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.7rem",
                       }}
                     >
                       (

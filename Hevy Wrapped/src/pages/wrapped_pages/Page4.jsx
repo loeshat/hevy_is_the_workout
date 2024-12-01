@@ -137,7 +137,7 @@ const Page4 = () => {
                     <Typography
                       component="span"
                       sx={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.7rem",
                       }}
                     >
                       (
