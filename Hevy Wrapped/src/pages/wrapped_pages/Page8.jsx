@@ -4,9 +4,9 @@ import { useResult } from "../../App";
 import BackgroundImage from "../../components/BackgroundImage";
 import GoBackButton from "../../components/GoBackButton";
 import SummaryBox from "../../components/SummaryBox";
-import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { Tooltip } from "@mui/material";
 import html2canvas from "html2canvas";
-import { motion } from "framer-motion"; // Added for smooth transitions
+import { motion } from "framer-motion";
 
 // Page 8, also the final summary page
 const SummaryPage = () => {
@@ -46,6 +46,11 @@ const SummaryPage = () => {
       // Restore the original border-radius
       printableRef.current.style.borderRadius = originalStyle;
     }
+  };
+
+  const handleCopyToClipboard = (event) => {
+    event.stopPropagation();
+    navigator.clipboard.writeText("https://hevy-wrapped.vercel.app");
   };
 
   return (
@@ -142,6 +147,23 @@ const SummaryPage = () => {
               DOWNLOAD
             </Typography>
           </Box>
+          <Typography variant="h6" sx={{ mt: 2 }}>
+            Please share the link when sharing on social media 🥰
+          </Typography>
+          <Tooltip title="Click to copy link" arrow>
+            <Typography
+              variant="h6"
+              sx={{
+                mt: 2,
+                textDecoration: "underline",
+                cursor: "pointer",
+                color: "blue",
+              }}
+              onClick={handleCopyToClipboard}
+            >
+              hevy-wrapped.vercel.app
+            </Typography>
+          </Tooltip>
         </Box>
       </Box>
     </motion.div>
