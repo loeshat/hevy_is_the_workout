@@ -39,6 +39,7 @@ const Page5 = () => {
           alignItems: "center",
           textAlign: "center",
           padding: 8,
+          paddingTop: 4,
           paddingBottom: 0,
           overflow: "hidden",
           position: "relative",
@@ -64,7 +65,7 @@ const Page5 = () => {
           <motion.div {...fadeInVariants(0.6)}>
             <Typography
               variant="h4"
-              sx={{ fontWeight: "bold", marginBottom: 5, fontSize: "2.5rem" }}
+              sx={{ fontWeight: "bold", marginBottom: 4, fontSize: "2.5rem" }}
             >
               {result.top_five_exercises[0].exerciseTitle}
             </Typography>
@@ -83,7 +84,7 @@ const Page5 = () => {
           {/* Image Animation */}
           <motion.div {...fadeInVariants(1.0)}>
             <Box sx={{ mb: 8 }}>
-              <img src="/assets/workouts_4.png" width="100%" />
+              <img src="/assets/workouts_4.png" width="90%" />
             </Box>
           </motion.div>
 
@@ -91,7 +92,7 @@ const Page5 = () => {
           <motion.div {...fadeInVariants(1.2)}>
             <Typography
               variant="h1"
-              sx={{ fontSize: "1.2rem", marginBottom: 5 }}
+              sx={{ fontSize: "1.2rem", marginBottom: 3 }}
             >
               you completed{" "}
               <Typography

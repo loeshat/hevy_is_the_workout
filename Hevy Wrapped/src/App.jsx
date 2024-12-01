@@ -9,7 +9,8 @@ import "./index.css";
 // Create a custom theme
 const theme = createTheme({
   typography: {
-    fontFamily: "'Inter'",
+    fontFamily:
+      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif",
   },
 });
 

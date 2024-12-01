@@ -99,7 +99,7 @@ const Page3 = () => {
           <motion.div {...fadeInVariants(1.0)}>
             <img
               src="/assets/day_1_pink.png"
-              style={{ width: "50%", height: "auto" }}
+              style={{ width: "40%", height: "auto" }}
             />
           </motion.div>
 

@@ -44,6 +44,7 @@ const Page4 = () => {
           overflowY: "hidden",
           overflowX: "hidden",
           padding: "20px",
+          paddingTop: 2,
           position: "relative",
         }}
       >
@@ -99,7 +100,7 @@ const Page4 = () => {
             <img
               src="/assets/day_2_muscle_pink.png"
               alt="Muscle icon"
-              style={{ width: "50%", height: "auto" }}
+              style={{ width: "40%", height: "auto" }}
             />
           </motion.div>
 

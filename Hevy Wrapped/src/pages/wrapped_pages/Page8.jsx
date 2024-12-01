@@ -61,7 +61,7 @@ const SummaryPage = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
-          alignItems: "left",
+          alignItems: { xs: "left", md: "center" },
           textAlign: "left",
           padding: 4,
           overflowX: "hidden",
@@ -81,7 +81,7 @@ const SummaryPage = () => {
           top="65vh"
           transform="rotate(-20deg)"
         />
-        <Box sx={{ marginTop: "60px" }} />
+        <Box sx={{ marginTop: "20px" }} />
         <GoBackButton colour="blue" backgroundColour="green" url="/" />
         <Box sx={{ zIndex: 1, color: "var(--blue)" }}>
           <motion.div

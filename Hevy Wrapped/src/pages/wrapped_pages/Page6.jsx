@@ -91,7 +91,11 @@ const Page6 = () => {
                   <Box>
                     <Typography
                       variant="h6"
-                      sx={{ fontWeight: "bold", color: "var(--green)" }}
+                      sx={{
+                        fontWeight: "bold",
+                        color: "var(--green)",
+                        fontSize: "1em",
+                      }}
                     >
                       #{index + 1}
                     </Typography>
@@ -132,7 +136,7 @@ const Page6 = () => {
 
           {/* Image Animation */}
           <motion.div {...fadeInVariants(1.0)}>
-            <img src="/assets/workouts_4.png" width="100%" />
+            <img src="/assets/workouts_4.png" width="90%" />
           </motion.div>
         </Box>
       </Box>
