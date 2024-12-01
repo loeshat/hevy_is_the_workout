@@ -64,13 +64,13 @@ const Page3 = () => {
         {/* Background Images */}
         <BackgroundImage
           component="sun_yellow"
-          left={{ xs: "0%", md: "10%", lg: "25%" }}
+          left={{ xs: "0%", md: "10%", lg: "20%" }}
           top="-5vh"
           transform="rotate(-20deg)"
         />
         <BackgroundImage
           component="moon_yellow"
-          left={{ xs: "20%", md: "10%", lg: "25%" }}
+          left={{ xs: "20%", sm: "30%", md: "40%", lg: "45%" }}
           top="60vh"
           transform="rotate(-90deg)"
         />
