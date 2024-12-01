@@ -106,7 +106,11 @@ const Page4 = () => {
 
           {/* Ranking */}
           <motion.div {...fadeInVariants(1.4)}>
-            <Stack spacing={1} mt={3}>
+            <Stack
+              spacing={1}
+              mt={3}
+              sx={{ paddingLeft: { xs: "0%", sm: "5%", md: "10%" } }}
+            >
               {sortedWorkouts.map((item, index) => (
                 <Stack
                   key={index}
