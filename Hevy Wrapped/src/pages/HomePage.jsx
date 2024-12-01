@@ -100,7 +100,9 @@ const HomePage = () => {
                 }}
               >
                 Your workout habits, tracked and summarised to flex on your
-                friends
+                friends <br />
+                Note: please open link in browser, won't directly work when
+                redirected from Instagram 😁
               </Typography>
             </motion.div>
 
